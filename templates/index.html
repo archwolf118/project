@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload File</title>
+</head>
+<body>
+    <h1>视频搜索</h1>
+    <p>请上传图片(图片格式：jpg或png)</p>
+    <form method=post enctype=multipart/form-data>
+         <input type=file name=file>
+         <input type=submit value=搜索>
+    </form>
+
+    <br />
+    <br />
+
+     <video id = "video1"  controls="controls" autoplay = "autoplay">
+
+            <source src="{{ url_for('static', filename='video/%s.mp4'%j) }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+       <script>
+        myVid=document.getElementById("video1");
+        {#function getCurTime()#}
+        {#  {#}
+        {#  alert(myVid.currentTime);#}
+        {#  }#}
+        function setCurTime()
+          {
+          myVid.currentTime={{ i }};
+          }
+        setCurTime()
+        </script>
+</body>
+</html>
